@@ -1,4 +1,4 @@
-# Express / TypeScript / TypeORM RESTful API boilerplate
+# Express / TypeScript / TypeORM RESTful API bitplace
 
 ![Heisenberg](heisenberg.jpg)
 
@@ -6,7 +6,7 @@
 [![TypeScript][typescript-badge]][typescript-url]
 [![prettier][prettier-badge]][prettier-url]
 
-Boilerplate with focus on best practices and painless developer experience:
+bitplace with focus on best practices and painless developer experience:
 
 - Minimal setup that can be extended 🔧
 - Spin it up with single command 🌀
@@ -33,7 +33,7 @@ Visit [localhost:4000](http://localhost:4000/) or if using Postman grab [config]
 Containers created:
 
 - Postgres database container seeded with 💊 Breaking Bad characters in `Users` table (default credentials `user=walter`, `password=white` in [.env file](./.env))
-- Node (v16 Alpine) container with running boilerplate RESTful API service
+- Node (v16 Alpine) container with running bitplace RESTful API service
 - and one Node container instance to run tests locally or in CI
 
 ## Features:
@@ -46,9 +46,9 @@ Containers created:
   - Connect to different staging or production environments `npm run docker:[stage|prod]`
   - Ready for **microservices** development and deployment.  
     Once API changes are made, just build and push new docker image with your favourite CI/CD tool  
-    `docker build -t <username>/api-boilerplate:latest .`  
-    `docker push <username>/api-boilerplate:latest`
-  - Run unit, integration (or setup with your frontend E2E) tests as `docker exec -ti be_boilerplate_test sh` and `npm run test`
+    `docker build -t <username>/api-bitplace:latest .`  
+    `docker push <username>/api-bitplace:latest`
+  - Run unit, integration (or setup with your frontend E2E) tests as `docker exec -ti be_bitplace_test sh` and `npm run test`
 - Contract first REST API design:
   - never break API again with HTTP responses and requests payloads using [type definitions](./src/types/express/index.d.ts)
   - Consistent schema error [response](./src/utils/response/custom-error/types.ts). Your frontend will always know how to handle errors thrown in `try...catch` statements 💪
@@ -63,17 +63,17 @@ Containers created:
 - Commit messages must meet [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) format.  
   After staging changes just run `npm run commit` and get instant feedback on your commit message formatting and be prompted for required fields by [Commitizen](https://github.com/commitizen/cz-cli)
 
-## Other awesome boilerplates:
+## Other awesome bitplaces:
 
-Each boilerplate comes with it's own flavor of libraries and setup, check out others:
+Each bitplace comes with it's own flavor of libraries and setup, check out others:
 
 - [Express and TypeORM with TypeScript](https://github.com/typeorm/typescript-express-example)
-- [Node.js, Express.js & TypeScript Boilerplate for Web Apps](https://github.com/jverhoelen/node-express-typescript-boilerplate)
-- [Express boilerplate for building RESTful APIs](https://github.com/danielfsousa/express-rest-es2017-boilerplate)
-- [A delightful way to building a RESTful API with NodeJs & TypeScript by @w3tecch](https://github.com/w3tecch/express-typescript-boilerplate)
+- [Node.js, Express.js & TypeScript bitplace for Web Apps](https://github.com/jverhoelen/node-express-typescript-bitplace)
+- [Express bitplace for building RESTful APIs](https://github.com/danielfsousa/express-rest-es2017-bitplace)
+- [A delightful way to building a RESTful API with NodeJs & TypeScript by @w3tecch](https://github.com/w3tecch/express-typescript-bitplace)
 
-[build-badge]: https://github.com/mkosir/express-typescript-typeorm-boilerplate/actions/workflows/main.yml/badge.svg
-[build-url]: https://github.com/mkosir/express-typescript-typeorm-boilerplate/actions/workflows/main.yml
+[build-badge]: https://github.com/mkosir/express-typescript-typeorm-bitplace/actions/workflows/main.yml/badge.svg
+[build-url]: https://github.com/mkosir/express-typescript-typeorm-bitplace/actions/workflows/main.yml
 [typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
 [typescript-url]: https://github.com/microsoft/TypeScript
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg

@@ -6,14 +6,13 @@ import { CustomError } from 'utils/response/custom-error/CustomError';
 import { Role } from 'orm/entities/user/types';
 
 export const create = async (req: Request, res: Response, next: NextFunction) => {
-    const { username, name, email, password } = req.body
+    const { username, email, password } = req.body
 
     const userRepository = getRepository(User)
     try {
         const user = new User()
 
         user.username = username
-        user.name = name
         user.password = password
         user.email = email
         user.hashPassword()

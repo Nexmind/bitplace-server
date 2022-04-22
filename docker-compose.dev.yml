@@ -1,38 +1,39 @@
 version: '3'
 
 services:
-  db_postgres:
-    container_name: 'db_boilerplate'
-    image: 'postgres:14.2-alpine'
-    restart: always
-    env_file:
-      - .env
+  db_mysql:
+    image: "mariadb:10.4.8"
+    container_name: "typeorm-mariadb"
     ports:
-      - '5432:5432'
-    volumes:
-      - ./database/boilerplate:/var/lib/postgresql/data/
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: persilos
+      MYSQL_PASSWORD: fW98RmT2
+      MYSQL_DATABASE: db_bitplace
 
-  be_boilerplate:
+  be_bitplace:
     entrypoint: /bin/sh './scripts/be-node-dev.sh'
     env_file:
       - .env
     ports:
       - '4000:4000'
     depends_on:
-      - db_postgres
+      - db_mysql
     links:
-      - db_postgres
+      - db_mysql:db_mysql
+    command: ["./wait-for-it.sh", "mysql:3306"]
 
-  be_boilerplate_test:
-    container_name: 'be_boilerplate_test'
+  be_bitplace_test:
+    container_name: 'be_bitplace_test'
     command: sh -c "echo 'Test container ready' && tail -f /dev/null"
     build: .
     stdin_open: true
     tty: true
     depends_on:
-      - db_postgres
+      - db_mysql
     links:
-      - db_postgres
+      - db_mysql
     env_file:
       - .env
     volumes:

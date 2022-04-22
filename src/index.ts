@@ -15,7 +15,7 @@ import { getLanguage } from './middleware/getLanguage';
 import { dbCreateConnection } from './orm/dbCreateConnection';
 import routes from './routes';
 
-//  https://github.com/mkosir/express-typescript-typeorm-boilerplate
+//  https://github.com/mkosir/express-typescript-typeorm-bitplace
 
 export const app = express();
 app.use(cors());

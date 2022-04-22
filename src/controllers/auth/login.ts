@@ -26,7 +26,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 
     const jwtPayload: JwtPayload = {
       id: user.id,
-      name: user.name,
+      name: user.username,
       email: user.email,
       role: user.role as Role,
       created_at: user.created_at,

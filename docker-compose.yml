@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  be_boilerplate:
-    container_name: 'be_boilerplate'
+  be_bitplace:
+    container_name: 'be_bitplace'
     build: .
     restart: always
     volumes:

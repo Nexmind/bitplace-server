@@ -5,6 +5,7 @@ export type ErrorResponse = {
   errorRaw: any;
   errorsValidation: ErrorValidation[] | null;
   stack?: string;
+  incriminateValue?: string
 };
 
 export type ErrorType = 'General' | 'Raw' | 'Validation' | 'Unauthorized';

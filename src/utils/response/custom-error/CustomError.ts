@@ -6,6 +6,7 @@ export class CustomError extends Error {
   private errors: string[] | null;
   private errorRaw: any;
   private errorsValidation: ErrorValidation[] | null;
+  private incriminateValue: string | null
 
   constructor(
     httpStatusCode: number,
@@ -23,7 +24,19 @@ export class CustomError extends Error {
     this.errorType = errorType;
     this.errors = errors;
     this.errorRaw = errorRaw;
-    this.errorsValidation = errorsValidation;
+
+    if (errorRaw.driverError && errorRaw.driverError.code === 'ER_DUP_ENTRY') {
+      const msg: string = errorRaw.driverError.sqlMessage
+
+      const firstIndex = msg.indexOf("'") + 1
+      const fieldValue = msg.substring(
+        msg.indexOf("'") + 1,
+        msg.indexOf("'", firstIndex)
+      )
+
+      this.incriminateValue = fieldValue
+    }
+      this.errorsValidation = errorsValidation;
   }
 
   get HttpStatusCode() {
@@ -37,6 +50,7 @@ export class CustomError extends Error {
       errors: this.errors,
       errorRaw: this.errorRaw,
       errorsValidation: this.errorsValidation,
+      incriminateValue: this.incriminateValue,
       stack: this.stack,
     };
   }

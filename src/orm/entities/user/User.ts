@@ -23,11 +23,6 @@ export class User {
   username: string;
 
   @Column({
-    nullable: true,
-  })
-  name: string;
-
-  @Column({
     default: 'STANDARD' as Role,
     length: 30,
   })

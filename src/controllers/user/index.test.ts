@@ -17,7 +17,6 @@ describe('Users', () => {
   let adminUserToken = null;
   const adminUser = new User();
   adminUser.username = 'Badger';
-  adminUser.name = 'Brandon Mayhew';
   adminUser.email = 'brandon.mayhew@test.com';
   adminUser.password = userPassword;
   adminUser.hashPassword();
@@ -26,7 +25,6 @@ describe('Users', () => {
   let standardUserToken = null;
   const standardUser = new User();
   standardUser.username = 'Toddy';
-  standardUser.name = 'Todd Alquist';
   standardUser.email = 'todd.alquist@test.com';
   standardUser.password = userPassword;
   standardUser.hashPassword();
